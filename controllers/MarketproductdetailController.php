@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\MarketCategory;
-use app\models\MarketCategorySearch;
+use app\models\MarketProductdetail;
+use app\models\MarketProductdetailSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MarketCategoryController implements the CRUD actions for MarketCategory model.
+ * MarketproductdetailController implements the CRUD actions for MarketProductdetail model.
  */
-class MarketcategoryController extends Controller
+class MarketproductdetailController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Lists all MarketCategory models.
+     * Lists all MarketProductdetail models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new MarketCategorySearch();
+        $searchModel = new MarketProductdetailSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Displays a single MarketCategory model.
+     * Displays a single MarketProductdetail model.
      * @param string $id
      * @return mixed
      */
@@ -57,13 +57,13 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Creates a new MarketCategory model.
+     * Creates a new MarketProductdetail model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new MarketCategory();
+        $model = new MarketProductdetail();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,7 +75,7 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Updates an existing MarketCategory model.
+     * Updates an existing MarketProductdetail model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -94,7 +94,7 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Deletes an existing MarketCategory model.
+     * Deletes an existing MarketProductdetail model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -107,15 +107,15 @@ class MarketcategoryController extends Controller
     }
 
     /**
-     * Finds the MarketCategory model based on its primary key value.
+     * Finds the MarketProductdetail model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return MarketCategory the loaded model
+     * @return MarketProductdetail the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = MarketCategory::findOne($id)) !== null) {
+        if (($model = MarketProductdetail::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

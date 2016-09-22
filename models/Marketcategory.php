@@ -21,7 +21,7 @@ use Yii;
  * @property MarketCategoryProduct[] $marketCategoryProducts
  * @property MarketProduct[] $idproducts
  */
-class Marketcategory extends \yii\db\ActiveRecord
+class MarketCategory extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Marketcategory;
+use app\models\MarketCategory;
 
 /**
  * MarketCategorySearch represents the model behind the search form about `app\models\MarketCategory`.
  */
-class MarketcategorySearch extends MarketCategory
+class MarketCategorySearch extends MarketCategory
 {
     /**
      * @inheritdoc
