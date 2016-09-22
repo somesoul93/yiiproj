@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'idproduct',
             [
             'attribute' => 'product',
-            'value' => 'idproduct'
+            'value' => 'product.name'
             ],
             'variant1',
             'variant2',

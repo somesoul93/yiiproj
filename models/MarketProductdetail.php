@@ -115,6 +115,14 @@ class MarketProductdetail extends \yii\db\ActiveRecord
     }
 
     /**
+    * @return \yii\db\ActiveQuery
+    */
+    public function getProduct()
+    {
+        return $this->hasOne(MarketProduct::className(), ['id' => 'idproduct']);
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function getIdsupplier0()

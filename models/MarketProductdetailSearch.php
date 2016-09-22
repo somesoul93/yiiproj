@@ -48,14 +48,14 @@ class MarketProductdetailSearch extends MarketProductdetail
         $query = MarketProductdetail::find();
 
         // add conditions that should always apply here
-        $query->joinWith(['market_product p']);
+        $query->joinWith(['product']);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
         // Important: here is how we set up the sorting
         // The key is the attribute name on our "MarketProductdetailSearch" instance
-        $dataProvider->sort->attributes['idproduct'] = [
+        $dataProvider->sort->attributes['product'] = [
             // The tables are the ones our relation are configured to
             // in my case they are prefixed with "tbl_"
             'asc' => ['market_product.name' => SORT_ASC],
@@ -90,7 +90,8 @@ class MarketProductdetailSearch extends MarketProductdetail
             ->andFilterWhere(['like', 'city', $this->city])
             ->andFilterWhere(['like', 'idsupplier', $this->idsupplier])
             ->andFilterWhere(['like', 'weightunit', $this->weightunit])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'market_product.name', $this->product]);
 
         return $dataProvider;
     }
